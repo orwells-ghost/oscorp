@@ -1,0 +1,15 @@
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    color: $color-white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    background-color: $color-primary;
+    padding: 1rem 2rem;
+    box-shadow: 0 1rem 1rem #000;
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
