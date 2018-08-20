@@ -6,19 +6,19 @@
         
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet"> 
         <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         
         <title>Oscorp | Homepage</title>
     </head>
     <body>
         <header class="header" id="home">
             <nav class="header__nav" id="navbar">
-                <div class="header__nav-toggle">
+                <a href="#" class="header__nav-logo">Oscorp</a>
+                <input type="checkbox" class="header__nav-checkbox" id="nav-toggle">
+                <label for="nav-toggle" class="header__nav-toggle">
                     <svg>
                         <use href="img/sprite-icon.svg#icon-bars"></use>
                     </svg>
-                </div>
-                <a href="#" class="header__nav-logo">Oscorp</a>
+                </label>
                 <ul class="header__nav-links" id="navLinks">
                     <li><a href="#home" class="header__nav-link active" id="homeLink">Home</a></li>
                     <li><a href="#about" class="header__nav-link">About</a></li>
@@ -38,15 +38,149 @@
         </header>
         <main class="main">
             <section class="about" id="about">
-                About
+                <h2 class="heading-2 about__heading">About Us</h2>
+                <div class="about__left">
+                    <img src="img/team.jpg" alt="Team Photo" class="about__img">
+                </div>
+                <div class="about__right">
+                    <h4 class="about__title">Who We Are</h4>
+                    <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel rem ab est enim doloremque architecto facere repellendus laboriosam! Perferendis quasi beatae necessitatibus quia eveniet, labore deleniti nemo dolorum ipsam doloribus.</p>
+                    <br>
+                    <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel rem ab est enim doloremque architecto facere repellendus laboriosam! Perferendis quasi beatae necessitatibus quia eveniet, labore deleniti nemo dolorum ipsam doloribus.</p>
+                    <a href="#" class="btn about__btn">View Our Team</a>
+                </div>
             </section>
 
             <section class="services" id="services">
-                services
+                <div class="services__wrapper">
+                    <h2 class="heading-2 services__heading">Services We Offer</h2>
+                    <div class="card card__1">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-code"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                        <div class="card__hover"></div>
+                    </div>
+                    <div class="card card__2">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-mobile"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                    </div>
+                    <div class="card card__3">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-pencil"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                    </div>
+                    <div class="card card__4">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-newspaper-o"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                    </div>
+                    <div class="card card__5">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-desktop"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                    </div>
+                    <div class="card card__6">
+                        <svg class="card__icon">
+                            <use href="img/sprite-icon.svg#icon-comments-o"></use>
+                        </svg>
+                        <h4 class="card__title">Web Design</h4>
+                        <p class="card__text">Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit. Maecenas molestie risus vel odio placerat suscipit.</p>
+                    </div>
+                </div>
             </section>
 
             <section class="portfolio" id="portfolio">
-                portfolio
+                <h2 class="heading-2 portfolio__heading">Latest Work</h2>
+                <ul class="portfolio__buttons">
+                    <li class="portfolio__button">All</li>
+                    <li class="portfolio__button">Web Design</li>
+                    <li class="portfolio__button">Mobile Apps</li>
+                    <li class="portfolio__button">Print Design</li>
+                    <li class="portfolio__button">Responsive</li>
+                </ul>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-1.jpg" alt="Portfolio 1" class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 1</h5>
+                        <p class="portfolio__category">Mobile App</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-2.jpg" alt="Portfolio " class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 2</h5>
+                        <p class="portfolio__category">Web Design</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-3.jpg" alt="Portfolio " class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 3</h5>
+                        <p class="portfolio__category">Mobile App</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-4.jpg" alt="Portfolio 4" class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 4</h5>
+                        <p class="portfolio__category">Print Design</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-5.jpg" alt="Portfolio 5" class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 5</h5>
+                        <p class="portfolio__category">Web Design</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/portfolio-6.jpg" alt="Portfolio 6" class="portfolio__img">
+                    <div class="portfolio__hover">
+                        <h5 class="portfolio__title">Portfolio Item 6</h5>
+                        <p class="portfolio__category">Responsive</p>
+                    </div>
+                    <div class="portfolio__icon-box">
+                        <svg class="portfolio__icon">
+                            <use href="img/sprite-icon.svg#icon-search"></use>
+                        </svg>
+                    </div>
+                </a>
             </section>
 
             <section class="plans" id="plans">

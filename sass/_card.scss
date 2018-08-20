@@ -1,0 +1,57 @@
+.card {
+    text-align: center;
+    padding: 3rem;
+    width: 35rem;
+    background-color: $color-white;
+    color: $color-primary;
+    position: relative;
+    z-index: 10;
+    
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+        fill: currentColor;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        color: $color-grey-dark;
+        margin-top: 2.2rem;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        color: $color-grey-dark;
+        margin-top: 2.2rem;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-primary;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        z-index: -1;
+        transition: transform .5s;
+    }
+
+    &:hover {
+        color: $color-white;
+    }
+
+    &:hover::after {
+        transform: scaleY(1);
+    }
+
+    &:hover &__title,
+    &:hover &__text {
+        color: $color-white;
+    }
+}

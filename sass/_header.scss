@@ -5,6 +5,7 @@
     height: 100vh;
     position: relative;
 
+
     &__nav {
         display: flex;
         align-items: center;
@@ -15,18 +16,49 @@
 
         color: $color-white;
         padding: 3.4rem 6.4rem;
-        border-bottom: 1px solid $color-grey;
+        border-bottom: $border-bottom-light;
         z-index: 100;
         transition: all .6s;
 
-        &-toggle {
+        &-checkbox {
             display: none;
         }
+    
+        &-toggle {
+            display: none;
+            svg {
+                height: 3.5rem;
+                width: 3.5rem;
+                fill: $color-primary;
+            }
 
-        svg {
-            height: 2rem;
-            width: 2rem;
-            fill: currentColor;
+            @media only screen and ( max-width: $bp-medium) {
+                display: block;
+            }
+        }
+
+        @media only screen and ( max-width: $bp-medium) {
+            #nav-toggle:checked ~ &-links {
+                position: absolute;
+                top: 10rem;
+                right: 0rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90rem;
+                height: 90rem;
+                background-color: #000;
+                text-align: center;
+
+                li {
+                    margin-top: 2rem;
+                    width: 100%;
+                }
+
+                li:last-child {
+                    margin-bottom: 2rem;
+                }
+            }
         }
 
         &-logo:link,
@@ -48,6 +80,10 @@
         &-links {
             display: flex;
             list-style-type: none;
+
+            @media only screen and ( max-width: $bp-medium) {
+                display: none;
+            }
         }
 
         &-link:link,
@@ -103,15 +139,4 @@
 
 .active {
     color: $color-primary !important;
-}
-
-.about,
-.services,
-.portfolio,
-.plans,
-.news,
-.testimonial,
-.contact,
-.newsletter {
-    height: 60rem;
 }

@@ -1,0 +1,27 @@
+.services {
+    grid-column: full-start / full-end;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) [wrapper-start] repeat(12, minmax(min-content, 10rem)) [wrapper-end] minmax(6rem, 1fr);
+
+    padding: 9rem 0;
+    background-color: $color-grey;
+
+
+    &__wrapper {
+        grid-column: wrapper-start / wrapper-end;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        grid-template-rows: 1fr auto;
+        grid-gap: 2rem;
+        align-content: center;
+        justify-items: center;
+    }
+
+    &__heading {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-bottom: 4rem;
+    }
+}
