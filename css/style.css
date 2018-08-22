@@ -14,7 +14,7 @@ body {
 
 .main {
   display: grid;
-  grid-template-rows: 70vh max-content max-content repeat(7, [row-start] 70rem);
+  grid-template-rows: 70vh repeat(4, max-content) repeat(7, [row-start] 70rem);
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 .heading-2 {
@@ -316,13 +316,125 @@ body {
       top: -6.5rem;
       right: -9.5rem; }
 
-.plans {
-  grid-column: center-start / center-end;
-  grid-row: 4 / 5; }
+.plan {
+  grid-column: full-start / full-end;
+  grid-row: 4 / 5;
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) [wrapper-start] repeat(12, minmax(min-content, 10rem)) [wrapper-end] minmax(6rem, 1fr);
+  background-color: #f5f5f5;
+  margin: 5rem 0;
+  padding: 10rem 0; }
+  .plan__wrapper {
+    grid-column: wrapper-start / wrapper-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-rows: min-content min-content;
+    grid-gap: 2rem; }
+  .plan__header {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-bottom: 5rem; }
+  .plan__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    z-index: 10; }
+    .plan__item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #26b18a;
+      transform: scaleY(0);
+      transform-origin: bottom center;
+      z-index: -1;
+      transition: transform .5s; }
+    .plan__item:hover::after {
+      transform: scaleY(1); }
+    .plan__item:hover * {
+      color: #fff; }
+    .plan__item:hover .plan__icon {
+      fill: #fff; }
+    .plan__item:hover .plan__btn {
+      color: #26b18a;
+      background-color: #fff; }
+  .plan__icon {
+    width: 4.1rem;
+    height: 4.1rem;
+    fill: #26b18a;
+    margin: 5rem 0 4rem; }
+  .plan__title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    line-height: 1.6; }
+  .plan__subtitle {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #26b18a;
+    margin: 1rem 0 1.5rem; }
+  .plan__desc {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80%;
+    line-height: 1.4;
+    margin-bottom: 1.2rem; }
+  .plan__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 85%; }
+  .plan__perk {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    line-height: 1.5;
+    border-bottom: 1px solid #f5f5f5; }
+  .plan__btn {
+    margin: 2.5rem 0 4.5rem; }
 
 .news {
   grid-column: center-start / center-end;
-  grid-row: 5 / 6; }
+  grid-row: 5 / 6;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-rows: min-content 1fr;
+  grid-gap: 3rem; }
+  .news__header {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 5rem 0 3rem; }
+  .news__img {
+    width: 100%; }
+  .news__title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    margin-top: 1.2rem; }
+  .news__date {
+    font-size: 1.4rem;
+    color: #a2a2a2;
+    letter-spacing: .1rem;
+    margin-top: .8rem; }
+  .news__desc {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 1rem 0; }
+  .news__link:link, .news__link:visited {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #26b18a;
+    text-transform: uppercase;
+    letter-spacing: .1rem; }
+  .news__link:hover {
+    color: #1a795e; }
 
 .testimonial {
   grid-column: full-start / full-end;
