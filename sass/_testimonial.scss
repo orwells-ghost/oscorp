@@ -1,4 +1,57 @@
 .testimonial {
     grid-column: full-start / full-end;
     grid-row: 6 / 7;
+
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-black, .7),
+        rgba($color-black, .7)),
+        url(../img/test-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: 5rem;
+
+
+    &__header {
+        grid-column: 1 / -1;
+        justify-self: center;
+        color: $color-white;
+        margin-top: 10rem;
+    }
+
+    &__item {
+        width: 60%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__carousel {
+        grid-column: 1 / -1;
+        z-index: 1;
+        margin-top: 8rem;
+    }
+
+    &__text {
+        font-size: 1.7rem;
+        color: $color-white;
+        margin-bottom: 3rem;
+    }
+
+    &__customer {
+        color: $color-white;
+        font-size: 1.6rem;
+        margin: 2rem 0;
+
+        span {
+            color: $color-primary;
+        }
+    }
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: $color-primary;
 }

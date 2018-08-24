@@ -21,11 +21,11 @@ function scrollFunction() {
   }
 
   if (document.documentElement.scrollTop < 550) {
-    navLinks[0].classList.add('active');
-    navLinks[1].classList.remove('active');
+    navLinks[0].classList.add('active-link');
+    navLinks[1].classList.remove('active-link');
     console.log("hit me!");
   } else {
-    navLinks[0].classList.remove('active');
+    navLinks[0].classList.remove('active-link');
   }
 }
 
@@ -33,9 +33,9 @@ var header = document.getElementById("navbar");
 var btns = header.getElementsByClassName("header__nav-link");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    var current = document.getElementsByClassName("active-link");
+    current[0].className = current[0].className.replace(" active-link", "");
+    this.className += " active-link";
   });
 }
 
@@ -51,8 +51,15 @@ $(window).on('scroll', function () {
         bottom = top + $(this).outerHeight();
  
     if (cur_pos >= top && cur_pos <= bottom) {
-      nav.find('a').removeClass('active');
-      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      nav.find('a').removeClass('active-link');
+      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active-link');
     }
   });
+});
+
+$('.owl-carousel').owlCarousel({
+  center: true,
+  items: 1,
+  center:true,
+  dots: true,
 });

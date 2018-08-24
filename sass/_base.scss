@@ -3,6 +3,7 @@ $color-primary: #26b18a;
 $color-primary-dark: #1a795e;
 $color-primary-light: #44d7ae;
 $color-white: #fff;
+$color-black: #000;
 $color-grey: #f5f5f5;
 $color-grey-darker: #a2a2a2;
 $color-grey-dark: #666;
@@ -34,6 +35,6 @@ body {
 
 .main {
     display: grid;
-    grid-template-rows: 70vh repeat(4, max-content) repeat(7, [row-start] 70rem);
+    grid-template-rows: 70vh repeat(4, max-content) 50vh max-content repeat(7, [row-start] 70rem);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(6rem, 1fr) [full-end];
 }

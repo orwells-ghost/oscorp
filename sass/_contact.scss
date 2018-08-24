@@ -1,4 +1,99 @@
 .contact {
     grid-column: center-start / center-end;
     grid-row: 7 / 8;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content 1fr min-content;
+    margin: 5rem 0;
+    padding: 0 5rem;
+
+    &__header {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-bottom: 5rem;
+    }
+
+    &__info {
+        grid-row: 2 / 3;
+        width: 80%;
+        justify-self: center;
+    }
+
+    &__info-list {
+        list-style: none;
+    }
+
+    &__info-item {
+        display: flex;
+        align-items: center;
+        border-bottom: $border-bottom-light;
+        padding: 1rem;
+    }
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: $color-primary;
+        margin-right: 2rem;
+    }
+
+    &__text {
+        font-size: 1.2rem;
+    }
+
+    &__address {
+        font-size: 1.2rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            line-height: 1.6;
+        }
+    }
+
+    &__form {
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content 1fr min-content;
+        grid-row-gap: 1.5rem; 
+        grid-column-gap: 3rem;
+    }
+
+    &__input {
+        background: #fbfbfb;
+        border: none;
+        font-size: 1.6rem;
+        padding: 1.2rem;
+
+        &--1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &--2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+
+
+    &__textarea {
+        background: #fbfbfb;
+        border: none;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.6rem;
+        padding: 1rem;
+
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+
+    &__btn {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        justify-self: start;
+    }
 }
