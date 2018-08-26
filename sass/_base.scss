@@ -9,8 +9,13 @@ $color-grey-darker: #a2a2a2;
 $color-grey-dark: #666;
 
 // Media Queries
-$bp-medium: 62.5em;   // 1000px;
-$bp-large: 75em;      // 1200px;
+$bp-smallest: 26em;           // 416px;
+$bp-extra-small: 37.5em;      // 600px;
+$bp-small: 50em;              // 800px;
+$bp-inbetween-md-sm: 56.25em; // 900px;
+$bp-medium: 62.5em;           // 1000px;
+$bp-inbetween-lg-md: 68.75em; // 1100px;
+$bp-large: 75em;              // 1200px;
 
 // Other Variables
 $border-bottom-light: 1px solid $color-grey;
@@ -27,6 +32,14 @@ $border-bottom-light: 1px solid $color-grey;
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and ( max-width: $bp-large) {
+        font-size: 56.25%;
+    }
+
+    @media only screen and ( max-width: $bp-small) {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -35,6 +48,21 @@ body {
 
 .main {
     display: grid;
-    grid-template-rows: 70vh repeat(4, max-content) 50vh max-content repeat(7, [row-start] 70rem);
+    grid-template-rows: 70vh repeat(4, max-content) 51vh 50vh 35vh max-content;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-rows: 45vh repeat(4, max-content) 50vh 50vh 35vh max-content;
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(3rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-extra-small) {
+        grid-template-rows: 50vh repeat(4, max-content) 55vh max-content 35vh max-content;
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(3rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        grid-template-rows: 85vh repeat(4, max-content) 90vh max-content 35vh max-content;
+        grid-template-columns: [full-start center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end full-end];
+    }
 }

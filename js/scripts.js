@@ -7,23 +7,17 @@ function scrollFunction() {
   if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
     document.getElementById("navbar").style.padding = "1.7rem 6.4rem";
     document.getElementById("navbar").style.backgroundColor = "#fff";
-    var k;
-    for (k = 0; k < links.length; k++) {
-        links[k].style.color = "#000";
-    }
+    document.getElementById('navLinks').style.top = "7.15rem";
+    document.getElementById('logo').style.color = "#26b18a";
   } else {
     document.getElementById("navbar").style.padding = "3.4rem 6.4rem";
     document.getElementById("navbar").style.backgroundColor = "transparent";
-    var k;
-    for (k = 0; k < links.length; k++) {
-        links[k].style.color = "#fff";
-    }
+    document.getElementById('navLinks').style.top = "10.5rem";
   }
 
   if (document.documentElement.scrollTop < 550) {
     navLinks[0].classList.add('active-link');
     navLinks[1].classList.remove('active-link');
-    console.log("hit me!");
   } else {
     navLinks[0].classList.remove('active-link');
   }

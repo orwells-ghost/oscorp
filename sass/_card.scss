@@ -1,16 +1,38 @@
 .card {
     text-align: center;
     padding: 3rem;
-    width: 35rem;
+    width: 35.25rem;
     background-color: $color-white;
     color: $color-primary;
     position: relative;
     z-index: 10;
+
+    @media only screen and ( max-width: $bp-inbetween-lg-md) {
+        width: 42rem;
+    }
+
+    @media only screen and ( max-width: $bp-inbetween-md-sm) {
+        width: 50rem;
+        padding: 4rem;
+    }
+
+    @media only screen and ( max-width: $bp-extra-small) {
+        width: 40rem;
+    }
+
+    @media only screen and ( max-width: $bp-smallest) {
+        width: 30rem;
+    }
     
     &__icon {
         width: 4rem;
         height: 4rem;
         fill: currentColor;
+
+        @media only screen and ( max-width: $bp-inbetween-md-sm) {
+            width: 5rem;
+            height: 5rem;
+        }
     }
 
     &__title {
@@ -20,12 +42,20 @@
         letter-spacing: .1rem;
         color: $color-grey-dark;
         margin-top: 2.2rem;
+
+        @media only screen and ( max-width: $bp-inbetween-md-sm) {
+            font-size: 1.8rem;
+        }
     }
 
     &__text {
         font-size: 1.2rem;
         color: $color-grey-dark;
         margin-top: 2.2rem;
+
+        @media only screen and ( max-width: $bp-inbetween-md-sm) {
+            font-size: 1.4rem;
+        }
     }
 
     &:after {

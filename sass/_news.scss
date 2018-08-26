@@ -7,6 +7,10 @@
     grid-template-rows: min-content 1fr;
     grid-gap: 3rem;
 
+    @media only screen and ( max-width: $bp-extra-small) {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
 
     &__header {
         grid-row: 1 / 2;
@@ -15,9 +19,6 @@
         margin: 5rem 0 3rem;
     }
 
-    &__item {
-
-    }
 
     &__img {
         width: 100%;

@@ -1,4 +1,47 @@
 .newsletter {
-    grid-column: center-start / center-end;
-    grid-row: 8 / 9;
+    grid-column: full-start / full-end;
+    grid-row: 9 / 10;
+    
+    display: grid;
+    justify-content: center;
+
+    background-color: #343434;
+    color: $color-white;
+
+
+    &__heading {
+        justify-self: center;
+        margin-top: 5rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-top: 3rem;
+
+        @media only screen and ( max-width: $bp-small) {
+            width: 80%;
+            text-align: center;
+            margin: 3rem auto 0;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 0;
+        height: 60%;
+    }
+
+    &__input {
+        border: none;
+        height: 50%;
+        width: 40%;
+        padding: 1rem;
+    }
+
+    &__btn {
+        height: 50%;
+    }
 }

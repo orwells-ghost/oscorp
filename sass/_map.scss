@@ -1,0 +1,14 @@
+.map {
+    grid-column: full-start / full-end;
+    grid-row: 8 / 9;
+
+    iframe {
+        width: 100% !important;
+        height: 100% !important;
+        background-color: linear-gradient(
+            to right bottom,
+            rgba($color-black, .7),
+            rgba($color-black, .7));
+        filter: brightness(50%);
+    }
+}

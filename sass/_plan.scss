@@ -9,12 +9,26 @@
     margin: 5rem 0;
     padding: 10rem 0;
 
+    @media only screen and ( max-width: $bp-smallest) {
+        grid-template-columns: [wrapper-start] repeat(12, minmax(min-content, 10rem)) [wrapper-end];
+    }
+
     &__wrapper {
         grid-column: wrapper-start / wrapper-end;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(31.5rem, 1fr));
         grid-template-rows: min-content min-content;
         grid-gap: 2rem;
+
+        @media only screen and ( max-width: $bp-medium) {
+            grid-template-columns: 1fr;
+            padding: 0 6rem;
+        }
+
+        @media only screen and ( max-width: $bp-small) {
+            padding: 0 3rem;
+        }
+
     }
 
     &__header {
@@ -92,6 +106,10 @@
         width: 80%;
         line-height: 1.4;
         margin-bottom: 1.2rem;
+
+        @media only screen and ( max-width: $bp-medium) {
+            width: 50%;
+        }
     }
 
     &__list {
@@ -100,6 +118,10 @@
         flex-direction: column;
         align-items: start;
         width: 85%;
+
+        @media only screen and ( max-width: $bp-medium) {
+            align-items: center;
+        }
     }
 
     &__perk {
@@ -107,6 +129,11 @@
         padding: 1rem 0;
         line-height: 1.5;
         border-bottom: $border-bottom-light;
+        width: 90%;
+
+        @media only screen and ( max-width: $bp-medium) {
+            text-align: center;
+        }
     }
 
     &__btn {

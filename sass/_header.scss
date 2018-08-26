@@ -5,7 +5,6 @@
     height: 100vh;
     position: relative;
 
-
     &__nav {
         display: flex;
         align-items: center;
@@ -38,21 +37,32 @@
         }
 
         @media only screen and ( max-width: $bp-medium) {
+            &-link:link,
+            &-link:visited {
+                margin-left: 0 !important;
+            }
+
             #nav-toggle:checked ~ &-links {
                 position: absolute;
-                top: 10rem;
-                right: 0rem;
+                top: 10.5rem;
+                right: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 90rem;
-                height: 90rem;
-                background-color: #000;
+                width: 25rem;
+                height: 180rem;
+                background-color: #434343;
                 text-align: center;
 
                 li {
-                    margin-top: 2rem;
                     width: 100%;
+                    border-bottom: 1px solid $color-grey-dark;
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+
+                    &:first-child {
+                        padding-top: 1rem;
+                    }
                 }
 
                 li:last-child {
@@ -109,11 +119,27 @@
         transform: translate(-50%, -50%);
         color: $color-white;
 
+        @media only screen and ( max-width: $bp-medium) {
+            width: 85%;
+        }
+
+        @media only screen and ( max-width: $bp-extra-small) {
+            width: 90%;
+        }
+
         &-heading {
             font-size: 4.2rem;
             text-transform: uppercase;
             letter-spacing: .4rem;
             font-weight: 300;
+
+            @media only screen and ( max-width: $bp-extra-small) {
+                font-size: 3.39rem;
+            }
+
+            @media only screen and ( max-width: $bp-smallest) {
+                font-size: 2.5rem;
+            }
 
             span {
                 background: linear-gradient(45deg, $color-primary-light, $color-primary-dark);
@@ -129,6 +155,10 @@
             text-align: center;
             letter-spacing: .1rem;
             line-height: 1.5;
+
+            @media only screen and ( max-width: $bp-medium) {
+                width: 70%;
+            }
         }
     }
 

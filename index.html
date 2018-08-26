@@ -14,7 +14,7 @@
     <body>
         <header class="header" id="home">
             <nav class="header__nav" id="navbar">
-                <a href="#" class="header__nav-logo">Oscorp</a>
+                <a href="#" class="header__nav-logo" id="logo">Oscorp</a>
                 <input type="checkbox" class="header__nav-checkbox" id="nav-toggle">
                 <label for="nav-toggle" class="header__nav-toggle">
                     <svg>
@@ -26,7 +26,7 @@
                     <li><a href="#about" class="header__nav-link">About</a></li>
                     <li><a href="#services" class="header__nav-link">Services</a></li>
                     <li><a href="#portfolio" class="header__nav-link">Portfolio</a></li>
-                    <li><a href="#plans" class="header__nav-link">Pricing</a></li>
+                    <li><a href="#plan" class="header__nav-link">Pricing</a></li>
                     <li><a href="#news" class="header__nav-link">News</a></li>
                     <li><a href="#testimonial" class="header__nav-link">Testimonials</a></li>
                     <li><a href="#contact" class="header__nav-link">Contact</a></li>
@@ -334,13 +334,55 @@
                 <a href="#" class="contact__btn btn" role="button">Submit</a>
             </section>
 
+            <section class="map">
+                <iframe frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=34.063390%2C%20-118.263039&key=AIzaSyC3w48-aLpDNPmCAWbOzwOYL_EOAZGiIxo&zoom=13" allowfullscreen></iframe> 
+            </section>
+
             <section class="newsletter" id="newsletter">
-                newsletter
+                <h2 class="heading-2 newsletter__heading">Newsletter</h2>
+                <p class="newsletter__text">Quisque aliquam dapibus egestas. Sed vitae tincidunt elit. Curabitur sagittis metus quis nunc dignissim pharetra.</p>
+                <div class="newsletter__btns">
+                    <input type="email" class="newsletter__input" placeholder="Your Email">
+                    <a href="#" class="newsletter__btn btn">Subscribe</a>                 
+                </div>
             </section>
         </main>
 
         <footer class="footer">
-            footer
+            <div class="footer__list">
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-facebook"></use>
+                    </svg>
+                </a>
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-twitter"></use>
+                    </svg>
+                </a>
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-pinterest-square"></use>
+                    </svg>
+                </a>
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-google-plus"></use>
+                    </svg>
+                </a>
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-youtube"></use>
+                    </svg>
+                </a>
+                <a href="#" class="footer__link">
+                    <svg class="footer__icon">
+                        <use href="img/sprite-icon.svg#icon-newspaper-o"></use>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer__copyright">&copy; Copyright Ryan Kennedy 2018. All Rights Reserved.</p>
         </footer>
 
         <script

@@ -6,7 +6,15 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: min-content 1fr min-content;
     margin: 5rem 0;
-    padding: 0 5rem;
+
+    @media only screen and ( max-width: $bp-small) {
+        grid-template-rows: repeat(2, min-content) 1fr min-content;
+    }
+
+    @media only screen and ( max-width: $bp-extra-small) {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
 
     &__header {
         grid-column: 1 / -1;
@@ -18,10 +26,31 @@
         grid-row: 2 / 3;
         width: 80%;
         justify-self: center;
+
+        @media only screen and ( max-width: $bp-small) {
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+            border-bottom: $border-bottom-light;
+        }
+
+        @media only screen and ( max-width: $bp-extra-small) {
+            width: 100%;
+        }
     }
 
     &__info-list {
         list-style: none;
+
+        @media only screen and ( max-width: $bp-small) {
+            display: flex;
+            align-items: center;
+        }
+
+        @media only screen and ( max-width: $bp-extra-small) {
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+        }
     }
 
     &__info-item {
@@ -29,6 +58,10 @@
         align-items: center;
         border-bottom: $border-bottom-light;
         padding: 1rem;
+
+        @media only screen and ( max-width: $bp-small) {
+            border-bottom: none;
+        }
     }
 
     &__icon {
@@ -39,11 +72,11 @@
     }
 
     &__text {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     &__address {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -57,9 +90,19 @@
         grid-row: 2 / 3;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: min-content 1fr min-content;
+        grid-template-rows: min-content 1fr;
         grid-row-gap: 1.5rem; 
         grid-column-gap: 3rem;
+
+        @media only screen and ( max-width: $bp-small) {
+            grid-row: 3 / 4;
+            grid-column: 1 / -1;
+        }
+
+        @media only screen and ( max-width: $bp-extra-small) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, min-content) 1fr;
+        }
     }
 
     &__input {
@@ -71,11 +114,24 @@
         &--1 {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
+            @media only screen and ( max-width: $bp-extra-small) {
+                grid-columns: 1 / -1;
+            }
         }
 
         &--2 {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
+            @media only screen and ( max-width: $bp-extra-small) {
+                grid-column: 1 / -1;
+                grid-row: 2 / 3;
+            }
+        }
+
+        &:focus {
+            outline: none !important;
+            border:1px solid $color-primary;
+            box-shadow: 0 0 10px $color-primary;
         }
     }
 
@@ -89,11 +145,28 @@
 
         grid-column: 1 / -1;
         grid-row: 2 / 3;
+
+        @media only screen and ( max-width: $bp-extra-small) {
+            grid-columns: 1 / -1;
+            grid-row: 3 / 4;
+        }
+
+        &:focus {
+            outline: none !important;
+            border:1px solid $color-primary;
+            box-shadow: 0 0 10px $color-primary;
+        }
     }
 
     &__btn {
         grid-row: 3 / 4;
         grid-column: 2 / 3;
         justify-self: start;
+        margin-top: 1.5rem;
+
+        @media only screen and ( max-width: $bp-small) {
+            grid-row: 4 / 5;
+            grid-column: 1 / -1;
+        }
     }
 }
