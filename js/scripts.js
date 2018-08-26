@@ -8,11 +8,29 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "1.7rem 6.4rem";
     document.getElementById("navbar").style.backgroundColor = "#fff";
     document.getElementById('navLinks').style.top = "7.15rem";
+    if (screen.width >= 1000) {
+      for (var i = 0; i < links.length; i++) {
+        if (i === 0) {
+          continue;
+        } else {
+          links[i].style.color = "#000";
+        }
+      }
+    }
     document.getElementById('logo').style.color = "#26b18a";
   } else {
     document.getElementById("navbar").style.padding = "3.4rem 6.4rem";
     document.getElementById("navbar").style.backgroundColor = "transparent";
     document.getElementById('navLinks').style.top = "10.5rem";
+    if (screen.width >= 1000) {
+      for (var i = 0; i < links.length; i++) {
+        if (i === 0) {
+          continue;
+        } else {
+          links[i].style.color = "#fff";
+        }
+      }
+    }
   }
 
   if (document.documentElement.scrollTop < 550) {

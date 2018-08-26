@@ -13,14 +13,12 @@
         url(../img/test-bg.jpg);
     background-size: cover;
     background-position: center;
-    margin-top: 5rem;
 
 
     &__header {
         grid-column: 1 / -1;
         justify-self: center;
         color: $color-white;
-        margin-top: 10rem;
     }
 
     &__item {
@@ -32,7 +30,6 @@
     &__carousel {
         grid-column: 1 / -1;
         z-index: 1;
-        margin-top: 8rem;
     }
 
     &__text {

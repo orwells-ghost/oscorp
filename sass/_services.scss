@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: minmax(6rem, 1fr) [wrapper-start] repeat(12, minmax(min-content, 10rem)) [wrapper-end] minmax(6rem, 1fr);
 
-    padding: 9rem 0;
     background-color: $color-grey;
 
     @media only screen and (max-width: $bp-smallest) {
@@ -37,6 +36,5 @@
     &__heading {
         grid-column: 1 / -1;
         justify-self: center;
-        margin-bottom: 4rem;
     }
 }

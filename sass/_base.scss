@@ -48,21 +48,21 @@ body {
 
 .main {
     display: grid;
-    grid-template-rows: 70vh repeat(4, max-content) 51vh 50vh 35vh max-content;
+    grid-template-rows: repeat(7, max-content) 32vh max-content;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(6rem, 1fr) [full-end];
 
     @media only screen and (max-width: $bp-small) {
-        grid-template-rows: 45vh repeat(4, max-content) 50vh 50vh 35vh max-content;
+        grid-template-rows: repeat(7, max-content) 32vh max-content;
         grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(3rem, 1fr) [full-end];
     }
 
     @media only screen and (max-width: $bp-extra-small) {
-        grid-template-rows: 50vh repeat(4, max-content) 55vh max-content 35vh max-content;
+        grid-template-rows: repeat(7, max-content) 32vh max-content;
         grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end] minmax(3rem, 1fr) [full-end];
     }
 
     @media only screen and (max-width: $bp-smallest) {
-        grid-template-rows: 85vh repeat(4, max-content) 90vh max-content 35vh max-content;
+        grid-template-rows: repeat(7, max-content) 32vh max-content;
         grid-template-columns: [full-start center-start] repeat(12, [col-start] minmax(min-content, 10rem)) [center-end full-end];
     }
 }

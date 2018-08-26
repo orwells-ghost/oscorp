@@ -123,6 +123,10 @@
             width: 85%;
         }
 
+        @media only screen and ( max-width: $bp-inbetween-md-sm) and (orientation: landscape) {
+            top: 65%;
+        }
+
         @media only screen and ( max-width: $bp-extra-small) {
             width: 90%;
         }

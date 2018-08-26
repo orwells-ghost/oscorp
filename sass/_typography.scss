@@ -4,6 +4,7 @@
     text-transform: uppercase;
     letter-spacing: .1rem;
     position: relative;
+    margin-bottom: 6rem;
 
     &::after {
         content: "";
@@ -23,4 +24,8 @@
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 2px;
+}
+
+section:not(.map) {
+    padding: 8rem 0;
 }

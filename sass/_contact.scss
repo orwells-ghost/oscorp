@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: min-content 1fr min-content;
-    margin: 5rem 0;
 
     @media only screen and ( max-width: $bp-small) {
         grid-template-rows: repeat(2, min-content) 1fr min-content;
@@ -13,13 +12,12 @@
 
     @media only screen and ( max-width: $bp-extra-small) {
         grid-template-columns: 1fr;
-        padding: 1rem;
+        padding: 8rem 2rem !important;
     }
 
     &__header {
         grid-column: 1 / -1;
         justify-self: center;
-        margin-bottom: 5rem;
     }
 
     &__info {
