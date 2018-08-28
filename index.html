@@ -12,6 +12,11 @@
         <title>Oscorp | Homepage</title>
     </head>
     <body>
+        <div class="scroll-box" id="scrollBox" onclick="topFunction()">
+            <svg class="scroll-icon">
+                <use xlink:href="img/sprite-icon.svg#icon-angle-up"></use>
+            </svg>
+        </div>
         <header class="header" id="home">
             <nav class="header__nav" id="navbar">
                 <a href="#" class="header__nav-logo" id="logo">Oscorp</a>
@@ -21,7 +26,7 @@
                         <use xlink:href="img/sprite-icon.svg#icon-bars"></use>
                     </svg>
                 </label>
-                <ul class="header__nav-links" id="navLinks">
+                <ul class="header__nav-links" id="navUL">
                     <li><a href="#home" class="header__nav-link active" id="homeLink">Home</a></li>
                     <li><a href="#about" class="header__nav-link">About</a></li>
                     <li><a href="#services" class="header__nav-link">Services</a></li>
@@ -104,14 +109,14 @@
 
             <section class="portfolio" id="portfolio">
                 <h2 class="heading-2 portfolio__heading">Latest Work</h2>
-                <ul class="portfolio__buttons">
-                    <li class="portfolio__button">All</li>
-                    <li class="portfolio__button">Web Design</li>
-                    <li class="portfolio__button">Mobile Apps</li>
-                    <li class="portfolio__button">Print Design</li>
-                    <li class="portfolio__button">Responsive</li>
+                <ul class="portfolio__buttons" id="portfolioButtons">
+                    <li class="portfolio__button active-filter" onclick="allFilter()">All</li>
+                    <li class="portfolio__button" onclick="filterItem('web')">Web Design</li>
+                    <li class="portfolio__button" onclick="filterItem('mobile')">Mobile Apps</li>
+                    <li class="portfolio__button" onclick="filterItem('print')">Print Design</li>
+                    <li class="portfolio__button" onclick="filterItem('responsive')">Responsive</li>
                 </ul>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="mobile">
                     <img src="img/portfolio-1.jpg" alt="Portfolio 1" class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 1</h5>
@@ -123,7 +128,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="web">
                     <img src="img/portfolio-2.jpg" alt="Portfolio " class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 2</h5>
@@ -135,7 +140,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="mobile">
                     <img src="img/portfolio-3.jpg" alt="Portfolio " class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 3</h5>
@@ -147,7 +152,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="print">
                     <img src="img/portfolio-4.jpg" alt="Portfolio 4" class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 4</h5>
@@ -159,7 +164,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="web">
                     <img src="img/portfolio-5.jpg" alt="Portfolio 5" class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 5</h5>
@@ -171,7 +176,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="portfolio__item">
+                <a href="#" class="portfolio__item" data-filter="responsive">
                     <img src="img/portfolio-6.jpg" alt="Portfolio 6" class="portfolio__img">
                     <div class="portfolio__hover">
                         <h5 class="portfolio__title">Portfolio Item 6</h5>

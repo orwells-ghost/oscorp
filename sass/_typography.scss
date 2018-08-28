@@ -29,3 +29,30 @@
 section:not(.map) {
     padding: 8rem 0;
 }
+
+.scroll-box {
+    // display: none;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 9999;
+    opacity: 0; 
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    background-color: $color-primary;
+    color: white;
+    cursor: pointer;
+    transition: opacity .6s ease-in-out;
+}
+
+.scroll-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

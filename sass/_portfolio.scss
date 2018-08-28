@@ -33,9 +33,12 @@
         font-weight: 300;
         text-transform: uppercase;
         letter-spacing: .1rem;
+        margin: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+
         @media only screen and (max-width: $bp-medium) {
             font-size: 1.25rem;
-            padding: 1rem;
         }
     }
 
@@ -112,4 +115,13 @@
             right: -9.5rem;
         }
     }
+}
+
+.displayNone {
+    display: none;
+}
+
+.active-filter {
+    color: $color-primary !important;
+    border: 2px solid $color-primary;
 }

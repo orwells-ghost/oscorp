@@ -62,6 +62,30 @@ body {
 section:not(.map) {
   padding: 8rem 0; }
 
+.scroll-box {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 9999;
+  opacity: 0;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  background-color: #26b18a;
+  color: white;
+  cursor: pointer;
+  transition: opacity .6s ease-in-out; }
+
+.scroll-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #fff;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/hero-bg.jpg);
   background-size: cover;
@@ -348,11 +372,13 @@ section:not(.map) {
     font-size: 1.75rem;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: .1rem; }
+    letter-spacing: .1rem;
+    margin: 2rem;
+    padding: 1rem;
+    cursor: pointer; }
     @media only screen and (max-width: 62.5em) {
       .portfolio__button {
-        font-size: 1.25rem;
-        padding: 1rem; } }
+        font-size: 1.25rem; } }
   .portfolio__img {
     width: 100%; }
   .portfolio__hover {
@@ -405,6 +431,13 @@ section:not(.map) {
     .portfolio__item:hover .portfolio__icon-box:before {
       top: -6.5rem;
       right: -9.5rem; }
+
+.displayNone {
+  display: none; }
+
+.active-filter {
+  color: #26b18a !important;
+  border: 2px solid #26b18a; }
 
 .plan {
   grid-column: full-start / full-end;
