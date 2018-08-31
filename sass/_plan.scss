@@ -73,6 +73,10 @@
             color: $color-primary;
             background-color: $color-white;
         }
+
+        &:hover svg {
+            fill: $color-white;
+        }
     }
 
     &__icon {
@@ -126,10 +130,16 @@
         padding: 1rem 0;
         line-height: 1.5;
         border-bottom: $border-bottom-light;
-        width: 90%;
+
+        display: flex;
 
         @media only screen and ( max-width: $bp-medium) {
             text-align: center;
+        }
+
+        svg {
+            margin-right: 1.5rem;
+            fill: $color-primary;
         }
     }
 

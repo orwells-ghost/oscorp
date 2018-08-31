@@ -523,6 +523,8 @@ section:not(.map) {
     .plan__item:hover .plan__btn {
       color: #26b18a;
       background-color: #fff; }
+    .plan__item:hover svg {
+      fill: #fff; }
   .plan__icon {
     width: 4.1rem;
     height: 4.1rem;
@@ -562,10 +564,13 @@ section:not(.map) {
     padding: 1rem 0;
     line-height: 1.5;
     border-bottom: 1px solid #f5f5f5;
-    width: 90%; }
+    display: flex; }
     @media only screen and (max-width: 62.5em) {
       .plan__perk {
         text-align: center; } }
+    .plan__perk svg {
+      margin-right: 1.5rem;
+      fill: #26b18a; }
   .plan__btn {
     margin: 2.5rem 0 4.5rem; }
 
@@ -611,6 +616,10 @@ section:not(.map) {
     letter-spacing: .1rem; }
   .news__link:hover {
     color: #1a795e; }
+  .news__btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 3rem; }
 
 .testimonial {
   grid-column: full-start / full-end;
@@ -869,7 +878,8 @@ section:not(.map) {
   letter-spacing: .3rem;
   background-color: #26b18a;
   padding: 1rem 2rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45); }
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.45); }
   .btn:link:active,
   .btn:visited:active {
-    transform: translateY(2px); }
+    transform: translateY(2px);
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.45); }

@@ -61,4 +61,10 @@
     &__link:hover {
         color: $color-primary-dark;
     }
+
+    &__btn {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-top: 3rem;
+    }
 }
