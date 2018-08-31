@@ -213,7 +213,7 @@ section:not(.map) {
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content min-content;
+  grid-template-rows: max-content min-content min-content;
   grid-column-gap: 2rem; }
   @media only screen and (max-width: 50em) {
     .about {
@@ -229,7 +229,6 @@ section:not(.map) {
       .about__img {
         display: none; } }
   .about__right {
-    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: start; }
@@ -250,6 +249,38 @@ section:not(.map) {
     margin-top: 2.5rem; }
   .about__btn {
     margin-top: 4rem; }
+  .about__team {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+    margin-top: 3rem; }
+    @media only screen and (max-width: 50em) {
+      .about__team {
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+        grid-template-rows: min-content min-content; } }
+    @media only screen and (max-width: 26em) {
+      .about__team {
+        grid-gap: 1rem; } }
+  @media only screen and (max-width: 26em) {
+    .about__member {
+      padding: 1rem; } }
+  .about__member > * {
+    margin-top: 1rem; }
+  .about__member--img {
+    width: 100%; }
+  .about__member--name {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase; }
+  .about__member--job {
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase; }
+  .about__member--desc {
+    font-size: 1.2rem;
+    line-height: 1.5; }
 
 .services {
   grid-column: full-start / full-end;

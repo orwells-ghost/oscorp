@@ -126,3 +126,12 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active-filter";
   });
 }
+
+// $(".about__team").toggle();
+// Show/hide team content
+$(document).ready(function() {
+ $(".about__btn").click(function(e) {
+   e.preventDefault();
+  $(".about__team").slideToggle()
+ });
+});

@@ -5,7 +5,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content min-content;
+    grid-template-rows: max-content min-content min-content;
     grid-column-gap: 2rem;
 
     @media only screen and ( max-width: $bp-small) {
@@ -31,7 +31,6 @@
     }
 
     &__right {
-        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -59,5 +58,54 @@
 
     &__btn {
         margin-top: 4rem;
+    }
+
+    &__team {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 3rem;
+        margin-top: 3rem;
+
+        @media only screen and ( max-width: $bp-small) {
+            grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));;
+            grid-template-rows: min-content min-content;
+        }
+
+        @media only screen and ( max-width: $bp-smallest) {
+            grid-gap: 1rem;
+        } 
+    }
+
+    &__member {
+        @media only screen and ( max-width: $bp-smallest) {
+            padding: 1rem;
+        } 
+
+        & > * {
+            margin-top: 1rem;
+        }
+
+        &--img {
+            width: 100%;
+        }
+
+        &--name {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+        }
+
+        &--job {
+            font-size: 1.4rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        &--desc {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
     }
 }
