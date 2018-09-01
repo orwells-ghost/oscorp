@@ -36,7 +36,7 @@
     }
 
     &__title {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
         font-weight: 300;
         text-transform: uppercase;
         letter-spacing: .1rem;
@@ -44,17 +44,18 @@
         margin-top: 2.2rem;
 
         @media only screen and ( max-width: $bp-inbetween-md-sm) {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
     }
 
     &__text {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 1.5;
         color: $color-grey-dark;
         margin-top: 2.2rem;
 
         @media only screen and ( max-width: $bp-inbetween-md-sm) {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
     }
 
