@@ -127,7 +127,9 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-// $(".about__team").toggle();
+// Hide by default
+$(".about__team").toggle();
+
 // Show/hide team content
 $(document).ready(function() {
  $(".about__btn").click(function(e) {
