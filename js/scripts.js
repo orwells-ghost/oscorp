@@ -1,139 +1,117 @@
-// Detect scroll and change nav and scrollbox
-window.onscroll = function() {scrollFunction()};
-var navbar = document.getElementById("navbar");
-var links = document.getElementById('navbar').getElementsByTagName('a');
-var navUL = document.getElementById('navUL');
-var navLinks = navUL.getElementsByTagName('a');
-var logo = document.getElementById('logo');
-var scrollBox = document.getElementById("scrollBox");
+$(function() {
+  const $navbar = $('.header__nav'), $navList = $('.header__nav-links'), $logo = $('.header__nav-logo'),      $linksWithoutLogo = $navList.children('li').children('a'), $linksWithLogo = $.merge($logo, $linksWithoutLogo), $scrollBox = $('.scroll-box'), $sections = $('section'), $portfolioLinks = $('.portfolio__button'), $portfolioItems = $('.portfolio__item'), $aboutBtn = $(".about__btn"), $aboutTeam = $(".about__team");
 
-function scrollFunction() {
-  
-  if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
-    // Scroll button
-    scrollBox.style.opacity = "1"; 
-    // setTimeout(function(){ scrollBox.style.opacity = "1"; }, 300);
+  // add active-link class to home link right away
+  $linksWithoutLogo.eq(0).addClass('active-link');
+  // Hide team area by default
+  $aboutTeam.toggle();
 
-    // Nav
-    navbar.style.padding = "1.7rem 6.4rem";
-    navbar.style.backgroundColor = "#fff";
-    navUL.style.top = "7.15rem";
-    if (screen.width >= 1000) {
-      for (var i = 0; i < links.length; i++) {
-        if (i === 0) {
-          continue;
-        } else {
-          links[i].style.color = "#000";
-        }
+  $(window).on('scroll', function() {
+    // get the y scroll distance of both document and body 
+    let $docPos = $(document).scrollTop(), $bodyPos = $('body').scrollTop(), curPos = $(this).scrollTop(), navHeight = $navbar.outerHeight();
+
+    // if the user has scrolled more than 25px down
+    if ( $docPos > 25 || $bodyPos > 25 ){
+
+      // fade in scroll box
+      $scrollBox.css('opacity', '1');
+      // change logo color
+      $logo.css('color', '#26b18a');
+
+      // navbar changes on scroll
+      $navbar.css({
+        'padding': '1.7rem 6.4rem',
+        'background-color': '#fff'
+      });
+      $navList.css('top', "7.15rem");
+
+      // if the window width is greater than 1000px breakpoint, change link color to black on scroll
+      if ( $(window).width() >= 1000 ){
+        $linksWithoutLogo.css('color', '#000');
+      } else {
+        $linksWithoutLogo.css('color', '#fff');
       }
-    }
-    logo.style.color = "#26b18a";
-  } else {
-      // Scroll box
-      scrollBox.style.opacity = "0";
-
-      // Nav
-      navbar.style.padding = "3.4rem 6.4rem";
-      navbar.style.backgroundColor = "transparent";
-      navUL.style.top = "10.5rem";
-      if (screen.width >= 1000) {
-        for (var i = 0; i < links.length; i++) {
-          if (i === 0) {
-            continue;
-          } else {
-            links[i].style.color = "#fff";
-          }
-        }
-      }
-  }
-
-  if (document.documentElement.scrollTop < 550) {
-    navLinks[0].classList.add('active-link');
-    navLinks[1].classList.remove('active-link');
-  } else {
-    navLinks[0].classList.remove('active-link');
-  }
-}
-
-// Change nav link active state on click
-var header = document.getElementById("navbar");
-var btns = header.getElementsByClassName("header__nav-link");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active-link");
-    current[0].className = current[0].className.replace(" active-link", "");
-    this.className += " active-link";
-  });
-}
-
-// Change nav link active state based on scroll position
-var sections = $('section')
-  , nav = $('nav')
-  , nav_height = nav.outerHeight();
- 
-$(window).on('scroll', function () {
-  var cur_pos = $(this).scrollTop();
- 
-  sections.each(function() {
-    var top = $(this).offset().top - nav_height,
-        bottom = top + $(this).outerHeight();
- 
-    if (cur_pos >= top && cur_pos <= bottom) {
-      nav.find('a').removeClass('active-link');
-      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active-link');
-    }
-  });
-});
-
-// When the user clicks scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-} 
-
-// Own carousel
-$('.owl-carousel').owlCarousel({
-  center: true,
-  items: 1,
-  center:true,
-  dots: true,
-});
-
-// Portfolio Filter
-var portfolioItems = document.getElementsByClassName("portfolio__item");
-
-function filterItem(filter){
-  for (var i = 0; i < portfolioItems.length; i++){
-    if (portfolioItems[i].dataset.filter !== filter){
-      portfolioItems[i].classList.add("displayNone");
     } else {
-      portfolioItems[i].classList.remove("displayNone");
+
+      //change back to normal
+      $navbar.css({
+        'padding': '3.4rem 6.4rem',
+        'background-color': 'transparent'
+      });
+      $navList.css('top', '10.5rem');
+      $logo.css('color', '#fff');
+
+      // if window width greater than but scroll is less than 25px, change links to white
+      if ( $(window).width() >= 1000 ){
+        $linksWithoutLogo.css('color', '#fff');
+      }
     }
-  }
-}
 
-function allFilter(){
-  for (var i = 0; i < portfolioItems.length; i++){
-    portfolioItems[i].classList.remove("displayNone");
-  }
-}
+    // if scroll position is less than 550px but more than 0px add active link to home and remove from about
+    if ( ($docPos < 550 && $docPos > 0)  || ($bodyPos < 550 && $bodyPos > 0) ) {
+      $linksWithoutLogo.eq(0).addClass('active-link');
+      $linksWithoutLogo.eq(1).removeClass('active-link');
+    } else {
+      $linksWithoutLogo.eq(0).removeClass('active-link');
+    }
 
-var btns = document.getElementsByClassName("portfolio__button");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active-filter");
-    current[0].className = current[0].className.replace(" active-filter", "");
-    this.className += " active-filter";
+    // For each section
+    $sections.each(function() {
+      // let top = the current element's top position relative to top left hand corner of document - navHeight - 75px, bottom = top + height including padding and border of current section.
+      let top = $(this).offset().top - navHeight - 75, bottom = top + $(this).outerHeight() - 75;
+
+      // if current scroll position is greater than top and less than bottom
+      if (curPos >= top && curPos <= bottom) {
+        // remove active-link class from all links
+        $linksWithoutLogo.removeClass('active-link');
+        // find link with hash link of current section's ID. 
+        $navbar.find('a[href="#'+$(this).attr('id')+'"]').addClass('active-link');
+      }
+    });
   });
-}
 
-// Hide by default
-$(".about__team").toggle();
+  // When scroll box is clicked, animate scrollTop of page slowly
+  $scrollBox.on('click', function() {
+    $('html, body').animate({ scrollTop: 0}, 'slow'); // html, body need for chrome & safari
+    return false;
+  });
 
-// Show/hide team content
-$(document).ready(function() {
- $(".about__btn").click(function(e) {
-   e.preventDefault();
-  $(".about__team").slideToggle()
- });
+  // Portfolio Filter
+  $portfolioLinks.on('click', function(event) {
+    // get clicked link and its data-rel value
+    let $this = $(this), category = $this.attr('data-rel');
+
+    // add/remove active-filter link class
+    $portfolioLinks.removeClass('active-filter');
+    $this.addClass('active-filter');
+
+    if ( category != 'all') {
+      // filter portfolioItems by getting just data-filter category, then fade out & remove class
+      let filterItems = $portfolioItems.filter('[data-filter="' + category + '"]');
+      $portfolioItems.not('.' + category).fadeOut().removeClass('scale-selection');
+      
+      // after fading out others, fade in filtered items
+      setTimeout(function() {
+        filterItems.fadeIn().addClass('scale-selection').fadeTo(100, 1);
+      }, 400);
+    } else {
+      // if 'all' is pressed, fadeIn all
+      $portfolioItems.fadeIn().addClass('scale-selection').fadeTo(300, 1);
+    }
+
+  });
+
+  // when team button pressed, toggle display
+  $aboutBtn.click(function(event) {
+    event.preventDefault();
+    $aboutTeam.slideToggle()
+  });
+
+  // Owl carousel
+  $('.owl-carousel').owlCarousel({
+    center: true,
+    items: 1,
+    center:true,
+    dots: true,
+  });
 });
